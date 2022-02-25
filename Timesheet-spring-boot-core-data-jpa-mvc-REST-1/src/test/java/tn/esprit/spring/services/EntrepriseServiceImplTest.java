@@ -15,6 +15,8 @@ public class EntrepriseServiceImplTest {
 	@Test
 	public void testAjouterEntreprise() {
 		Entreprise entreprise = new Entreprise("Devolution","DevOps");
+		// test insert with id value
+		// id value is sequence, auto incremented
 		assertEquals(1,es.ajouterEntreprise(entreprise));
 	}
 
