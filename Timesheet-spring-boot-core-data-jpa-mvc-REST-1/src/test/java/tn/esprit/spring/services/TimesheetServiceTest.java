@@ -2,6 +2,7 @@ package tn.esprit.spring.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
 
 import java.util.Date;
 import java.util.List;
@@ -60,7 +61,8 @@ public class TimesheetServiceTest {
 			int m=iTimesheetService.ajouterMission(mission);
 			System.out.println(m);
 			l.debug("mission ajoutée");
-			assertNotNull(m);
+			assertThat(m!=0);
+			assertNotSame(m,0);
 		} catch (Exception e) {
 			l.error("erreur methode ajouter mission");
 		}
@@ -81,7 +83,8 @@ public class TimesheetServiceTest {
 			missionRepository.save(mission);
 			System.out.println(mission.getDepartement() + "-----------------------------------------------------------------------------");
 			assertNotNull(mission.getDepartement());
-			assertNotNull(mission.getId());
+			assertThat(mission.getId() != 0);
+			assertNotSame(mission.getId(),0);
 		}catch(Exception e) {
 			l.error("erreur affecter mission a departement");
 		}
