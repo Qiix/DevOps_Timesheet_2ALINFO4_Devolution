@@ -375,3 +375,51 @@
 2020-03-04 19:05:25.123  INFO 8940 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-03-04 19:05:25.187  INFO 8940 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-03-04 19:05:25.225  INFO 8940 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-06 15:13:42.776  INFO 6972 --- [main] t.e.s.services.TimesheetServiceTest      : Starting TimesheetServiceTest on DESKTOP-TCQ4V04 with PID 6972 (started by siwar in C:\Users\siwar\Desktop\iii\DevOps_Timesheet_2ALINFO4_Devolution2\Timesheet-spring-boot-core-data-jpa-mvc-REST-1)
+2022-04-06 15:13:42.778  INFO 6972 --- [main] t.e.s.services.TimesheetServiceTest      : No active profile set, falling back to default profiles: default
+2022-04-06 15:13:50.785  INFO 6972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-04-06 15:13:51.536  INFO 6972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 729ms. Found 6 repository interfaces.
+2022-04-06 15:13:55.456  INFO 6972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$962d7031] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-06 15:13:58.305  INFO 6972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-06 15:13:58.888  INFO 6972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-06 15:13:59.368  INFO 6972 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-04-06 15:13:59.647  INFO 6972 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2022-04-06 15:13:59.668  INFO 6972 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2022-04-06 15:14:00.968  INFO 6972 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2022-04-06 15:14:02.112  INFO 6972 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-04-06 15:14:12.222  INFO 6972 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-06 15:14:19.679  INFO 6972 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2022-04-06 15:14:42.819  INFO 6972 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-06 15:14:47.536  WARN 6972 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 15:14:55.098  INFO 6972 --- [main] t.e.s.services.TimesheetServiceTest      : Started TimesheetServiceTest in 74.823 seconds (JVM running for 82.634)
+2022-04-06 15:14:57.551 ERROR 6972 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : tn.esprit.spring.entities.Mission.departement -> tn.esprit.spring.entities.Departement]
+2022-04-06 15:14:57.796  INFO 6972 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-06 15:14:57.862  INFO 6972 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-06 15:14:57.868  INFO 6972 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-06 15:14:58.038  INFO 6972 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-06 15:17:18.149  INFO 8708 --- [main] t.e.s.services.TimesheetServiceTest      : Starting TimesheetServiceTest on DESKTOP-TCQ4V04 with PID 8708 (started by siwar in C:\Users\siwar\Desktop\iii\DevOps_Timesheet_2ALINFO4_Devolution2\Timesheet-spring-boot-core-data-jpa-mvc-REST-1)
+2022-04-06 15:17:18.200  INFO 8708 --- [main] t.e.s.services.TimesheetServiceTest      : No active profile set, falling back to default profiles: default
+2022-04-06 15:17:24.803  INFO 8708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-04-06 15:17:25.411  INFO 8708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 586ms. Found 6 repository interfaces.
+2022-04-06 15:17:29.317  INFO 8708 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39de8215] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-06 15:17:30.964  INFO 8708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-06 15:17:31.487  INFO 8708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-06 15:17:31.846  INFO 8708 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-04-06 15:17:32.516  INFO 8708 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2022-04-06 15:17:32.564  INFO 8708 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2022-04-06 15:17:34.070  INFO 8708 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2022-04-06 15:17:34.875  INFO 8708 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-04-06 15:17:39.408  INFO 8708 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-06 15:17:42.782  INFO 8708 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2022-04-06 15:18:00.219  INFO 8708 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-06 15:18:02.999  WARN 8708 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 15:18:08.012  INFO 8708 --- [main] t.e.s.services.TimesheetServiceTest      : Started TimesheetServiceTest in 52.262 seconds (JVM running for 56.443)
+2022-04-06 15:18:10.856 ERROR 8708 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : tn.esprit.spring.entities.Mission.departement -> tn.esprit.spring.entities.Departement]
+2022-04-06 15:18:11.098  INFO 8708 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-06 15:18:11.125  INFO 8708 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-06 15:18:11.128  INFO 8708 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-06 15:18:11.150  INFO 8708 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
