@@ -31,7 +31,7 @@ import tn.esprit.spring.repository.TimesheetRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TimesheetServiceTest {
+public class TimesheetServiceImpTest {
 	@Autowired
 	IControllerEntrepriseImpl entrepriseControl;
 	@Autowired
@@ -49,7 +49,7 @@ public class TimesheetServiceTest {
 	@Autowired
 	ITimesheetService iTimesheetService;
 	
-	private static final Logger l = LogManager.getLogger(TimesheetServiceTest.class);
+	private static final Logger l = LogManager.getLogger(TimesheetServiceImpTest.class);
 	
 	@Test
 	public void testAjouterMission() {
