@@ -26,7 +26,7 @@ public class EntrepriseServiceImplTest {
 	Integer idEntreprise;
 	Integer idDepartment;
 	
-	private static final Logger l = LogManager.getLogger(TimesheetServiceTest.class);
+	private static final Logger l = LogManager.getLogger(TimesheetServiceImplTest.class);
 
 	@Test
 	public void testAjouterEntreprise() {

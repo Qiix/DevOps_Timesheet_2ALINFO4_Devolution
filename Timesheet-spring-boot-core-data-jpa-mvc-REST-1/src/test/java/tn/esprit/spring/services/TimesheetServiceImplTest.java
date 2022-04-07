@@ -60,7 +60,6 @@ public class TimesheetServiceImplTest {
 			mission.setName("devops");
 		    mission.setDescription("devops");
 			int m=iTimesheetService.ajouterMission(mission);
-			System.out.println(m);
 			l.debug("mission ajoutée");
 			assertThat(m!=0);
 			assertNotSame(m,0);
@@ -78,14 +77,14 @@ public class TimesheetServiceImplTest {
 		try {
 			Mission mission = missionRepository.findById(1).orElse(mission0);
 			Departement dept = deptRepoistory.findById(1).orElse(departement0);
-			l.debug(dept.getId()+ "-----------------------------------------------------------------------------");
+			l.debug(dept.getId());
 			deptRepoistory.save(dept);
-			l.debug(dept.getId()+ "-----------------------------------------------------------------------------");
+			l.debug(dept.getId());
 
 			List<Mission> listmission =new ArrayList<>();
 			listmission.add(mission);
 			dept.setMissions(listmission);
-			l.debug("after save misssion in dept"+ "-----------------------------------------------------------------------------");
+			l.debug("after save misssion in dept");
 			mission.setDepartement(dept);
 			l.debug("departement affecté");
 			missionRepository.save(mission);
