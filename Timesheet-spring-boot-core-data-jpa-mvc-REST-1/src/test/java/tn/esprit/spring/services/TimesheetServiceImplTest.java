@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +32,7 @@ import tn.esprit.spring.repository.TimesheetRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TimesheetServiceTest {
+public class TimesheetServiceImplTest {
 	@Autowired
 	IControllerEntrepriseImpl entrepriseControl;
 	@Autowired
@@ -49,7 +50,7 @@ public class TimesheetServiceTest {
 	@Autowired
 	ITimesheetService iTimesheetService;
 	
-	private static final Logger l = LogManager.getLogger(TimesheetServiceTest.class);
+	private static final Logger l = LogManager.getLogger(TimesheetServiceImplTest.class);
 	
 	@Test
 	public void testAjouterMission() {
@@ -77,11 +78,17 @@ public class TimesheetServiceTest {
 		try {
 			Mission mission = missionRepository.findById(1).orElse(mission0);
 			Departement dept = deptRepoistory.findById(1).orElse(departement0);
+			l.debug(dept.getId()+ "-----------------------------------------------------------------------------");
+			deptRepoistory.save(dept);
+			l.debug(dept.getId()+ "-----------------------------------------------------------------------------");
+
+			List<Mission> listmission =new ArrayList<>();
+			listmission.add(mission);
+			dept.setMissions(listmission);
+			l.debug("after save misssion in dept"+ "-----------------------------------------------------------------------------");
 			mission.setDepartement(dept);
-			System.out.println(mission + "-----------------------------------------------------------------------------");
 			l.debug("departement affecté");
 			missionRepository.save(mission);
-			System.out.println(mission.getDepartement() + "-----------------------------------------------------------------------------");
 			assertNotNull(mission.getDepartement());
 			assertThat(mission.getId() != 0);
 			assertNotSame(mission.getId(),0);
@@ -97,7 +104,7 @@ public class TimesheetServiceTest {
 		Mission mission = new Mission();
 		mission.setName("test");
 	    mission.setDescription("test");
-	    System.out.println("debut ajouter mission");
+	    l.info("debut ajouter mission");
 	    int m=1;
 	    try {
 	    	m=iTimesheetService.ajouterMission(mission);
@@ -105,7 +112,7 @@ public class TimesheetServiceTest {
 	    	l.error("mission not saved ");
 	    }
 		
-		System.out.println("fin ajouter mission");
+		l.info("fin ajouter mission");
 		
 		Employe e=new Employe();
 		e.setEmail("hello@eprit.tn");
@@ -121,17 +128,13 @@ public class TimesheetServiceTest {
 		
 		Date date1=new Date();
 		Date date2=new Date(2/2/2022);
-		System.out.println(date1 + "-----------------------------------------------------------------------------");
-		System.out.println(date2 + "-----------------------------------------------------------------------------");
 		TimesheetPK timesheetPK = new TimesheetPK(m,e.getId(),date2,date1);
 		Timesheet timesheet = new Timesheet();
 		timesheet.setTimesheetPK(timesheetPK);
 		timesheet.setValide(false);
-		System.out.println(timesheet.getTimesheetPK().getDateDebut() + "       " + timesheet.getTimesheetPK().getDateFin() + "-----------------------------------------------------------------------------");
 		try {
 			timesheetRepository.save(timesheet);
 			assertNotNull(timesheet.getTimesheetPK());
-			System.out.println(timesheet.getTimesheetPK());
 		} catch(Exception s) {
 			l.error("timesheet not saved");
 		}
@@ -147,14 +150,12 @@ public class TimesheetServiceTest {
 		int id=1;
 		try {
 			List<Mission> listMissions=timesheetRepository.findAllMissionByEmployeJPQL(id);
-			System.out.println(listMissions.isEmpty() + "-----------------------------------------------------------------------------");
+			l.info(listMissions.isEmpty());
 			assertNotNull(listMissions);
 			assertThat(!listMissions.isEmpty());
 		} catch(Exception e) {
 			l.error("could not find all missions");
 		}
-		
-		
 		l.info("out methode findAllMissionByEmployeJPQL");
 	}
 	
@@ -166,7 +167,7 @@ public class TimesheetServiceTest {
 			List<Employe> listEmpl=timesheetRepository.getAllEmployeByMission(id);
 			assertNotNull(listEmpl);
 			assertThat(!listEmpl.isEmpty());
-			System.out.println(listEmpl + "-----------------------------------------------------------------------------");
+			l.info(listEmpl);
 		} catch(Exception e) {
 			l.error("could not get list employes");
 		}
