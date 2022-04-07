@@ -2,6 +2,7 @@ package tn.esprit.spring.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,10 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
 		Entreprise entreprise = entrepriseRepoistory.findById(entrepriseId).orElse(null);
 		Departement dep = deptRepoistory.findById(depId).orElse(null);
-		
-		dep.setEntreprise(entreprise);
-		deptRepoistory.save(dep);
+		if (dep!=null){
+			dep.setEntreprise(entreprise);
+			deptRepoistory.save(dep);
+		}
 		
 	}
 	
@@ -77,10 +79,13 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	public int deleteEntrepriseById(int entrepriseId) {
 		l.debug("methode deleteEntrepriseById ");
 		try {
-			if(entrepriseRepoistory.findById(entrepriseId).orElse(null)!=null){
-			entrepriseRepoistory.delete(entrepriseRepoistory.findById(entrepriseId).orElse(null));
+			Optional<Entreprise> Optentrp = entrepriseRepoistory.findById(entrepriseId);
+			if(Optentrp.isPresent()){
+			Entreprise entrp = Optentrp.get();
+			entrepriseRepoistory.delete(entrp);
 			l.debug("deleteEntrepriseById fini avec succes ");
-			return 0;}else {
+			return 0;}
+			else {
 				l.error("erreur methode deleteEntrepriseById : " );
 				return -1;
 			}
@@ -94,10 +99,13 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	public int deleteDepartementById(int depId) {
 		l.debug("methode deleteDepartementById ");
 		try {
-			if(deptRepoistory.findById(depId).orElse(null)!=null){
-				deptRepoistory.delete(deptRepoistory.findById(depId).orElse(null));
+			Optional<Departement> Optdep = deptRepoistory.findById(depId);
+			if(Optdep.isPresent()){
+				Departement dp = Optdep.get();
+				deptRepoistory.delete(dp);
 			l.debug("deleteDepartementById fini avec succes ");
-			return 0;}else {
+			return 0;}
+			else {
 				l.error("erreur methode deleteDepartementById : " );
 				return -1;
 			}
